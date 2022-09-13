@@ -16,3 +16,7 @@ RUN apt-get update -qq \
     && mv ./argocd-linux-amd64 /usr/local/bin/argocd \
     && cd \
     && rm -rf $TMPBUILD
+
+COPY ./entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
